@@ -10,10 +10,3 @@
 		$url = "homePage";
 	}
 ?>
-
-<h3>Index</h3>
-get = 
-<?php 
-	echo $url; 
-	require_once($url.".php");
-?>
