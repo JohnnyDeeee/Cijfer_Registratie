@@ -21,11 +21,11 @@ function callHook()
     
     $queryString = $urlArray; // $queryString = '123' (argumentenlijst)
     
-    //Dit wordt de map naam waar de controller in komt te staan
+    //Dit wordt de map naam waar de views in komen te staan
     $controllerName = ucwords(strtolower($controller));
     
-    //model naam...
-    $model = rtrim(strtolower($controller), 's');
+    //Dit wordt de naam voor de model class ($controller - s), dit is voor de database
+    $model = ucwords(rtrim(strtolower($controller), 's')); //strtolower() en ucwords() zijn optioneel
     
     //Dit is de naam van de controller class
     $controller = ucwords(strtolower($controller));
