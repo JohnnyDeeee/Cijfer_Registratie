@@ -10,7 +10,7 @@
         //Constructor
         public function __construct($model, $controller, $action)
         {
-            $this->model = $model;
+            $this->model = new $model();
             $this->controller = $controller;
             $this->action = $action;
         }
