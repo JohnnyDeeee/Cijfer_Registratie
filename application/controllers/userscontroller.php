@@ -1,5 +1,5 @@
 <?php
-class UsersController
+class UsersController extends Controller
 {
     //Constructor
     public function __construct($model, $controllerName, $action)

@@ -43,7 +43,7 @@ function callHook()
     }
     else
     {
-        echo "Method ".$action." bestaadt niet <BR>";
+        echo "Method ".$action." bestaadt niet! <BR>";
     }
 }
 
