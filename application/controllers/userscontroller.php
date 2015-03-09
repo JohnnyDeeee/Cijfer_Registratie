@@ -8,11 +8,10 @@ class UsersController extends Controller
     }
     
     //Methods
-    public function adduser($id, $naam, $leeftijd)
+    public function adduser()
     {
-        echo "ID = ".$id."<BR>";
-        echo "NAAM = ".$naam."<BR>";
-        echo "LEEFTIJD = ".$leeftijd."<BR>";
+        $introtext = "Geef uw naam:";
+        $this->set('header', $introtext);
     }
 }
 
