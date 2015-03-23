@@ -2,10 +2,10 @@
     class Controller
     {
         //Fields
-        private $model;
-        private $controller;
-        private $action;
-        private $template;
+        protected $model;
+        protected $controller;
+        protected $action;
+        protected $template;
         
         public function set($name, $value)
         {
@@ -16,9 +16,10 @@
         public function __construct($model, $controller, $action)
         {
             $this->model = new $model();
+            //var_dump($this->model);exit();
             $this->controller = $controller;
             $this->action = $action;
-             $this->template = new Template($controller, $action);
+            $this->template = new Template($controller, $action);
         }
         
         public function __destruct()
