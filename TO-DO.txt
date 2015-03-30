@@ -1,0 +1,14 @@
+Openhuis registratie formulier
+-----------------------------
+
+TO-DO:
+-   Formulier maken
+    -   Woonplaats wordt automatisch ingevuld als postcode en huisnummer zijn ingevoerd
+-   Inlog registratie systeem
+    -   Check user in database
+    
+DOING:
+-   Gebruikers rollen maken
+    -   Secure elke pagina met gebruikers rollen
+        -   Formulier is secure (met hardcoded users)
+        -   CRUD is nog niet secure

@@ -32,7 +32,7 @@ class UsersController extends Controller
         {
             $this->set('header', "Het record is geupdate!");
             $this->model->update_in_users($_POST, $id);
-            header("refresh:3;url=".BASE_URL."generals/homepage");
+            header("refresh:3;url=".BASE_URL."");
         }
         else
         {
