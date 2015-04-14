@@ -5,20 +5,20 @@
         {
             //echo "Ik zit in de User Model";
             $query = "INSERT INTO `users` (`id`,
-                                            `voornaam`,
-                                            `tussenvoegsel`,
-                                            `achternaam`)
+                                            `username`,
+                                            `password`,
+                                            `userrole`)
                                             VALUES (Null,
-                                            '".$post['firstname']."',
-                                            '".$post['infix']."',
-                                            '".$post['lastname']."')";
+                                            '".$post['username']."',
+                                            '".$post['password']."',
+                                            '".$post['userrole']."')";
             
             $this->query($query);
         }
         
         public function update_in_users($post, $id)
         {
-            $query = "UPDATE `users` SET voornaam='".$post['firstname']."', tussenvoegsel='".$post['infix']."', achternaam='".$post['lastname']."' WHERE id='".$id."'";
+            $query = "UPDATE `users` SET username='".$post['username']."', password='".$post['password']."', userrole='".$post['userrole']."' WHERE id='".$id."'";
             
             $this->query($query);
         }

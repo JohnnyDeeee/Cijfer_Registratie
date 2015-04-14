@@ -1,11 +1,3 @@
-<?php
-    //Dit zorgt ervoor dat session_start() maar 1x start
-    if (session_status() == PHP_SESSION_NONE)
-    {
-        session_start();
-    }
-?>
-
 <h2><?php echo $header; ?></h2>
 
 <h3>Admin actions</h3>

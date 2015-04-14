@@ -20,14 +20,16 @@ else
 if (session_status() == PHP_SESSION_NONE)
 {
     session_start();
+    //$_SESSION['userrole'] = 'guest'; //set userrole as guest standard
+    //$_SESSION['loggedin'] = false; //set logged in false standard
 }   
 
-if (!isset($_SESSION['userrole']))
-{
-    $_SESSION['userrole'] = 'guest'; //set userrole as guest standard
-}
 
-echo "<font color='green'>YOUR userrole = ".$_SESSION['userrole']."</font>";
+//DEBUG
+echo "<font color='green'>";
+echo "YOUR userrole = ".$_SESSION['userrole']."<BR>";
+echo "Logged in = "; echo ($_SESSION['loggedin']) ? 'true' : 'false';
+echo "</font>";
 
 require_once(ROOT.DS.'library'.DS.'bootstrap.php');
 ?>

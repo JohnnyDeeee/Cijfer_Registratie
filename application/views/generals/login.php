@@ -3,25 +3,35 @@
 <?php 
     if (isset($_POST['submit']))
     {
-        if ($_SESSION['userrole'] == 'admin')
+        if ($_SESSION['loggedin'] == true)
         {
-            echo "You are logged in as Admin!<BR>";
-        }
-        else if ($_SESSION['userrole'] == 'guest')
-        {
-            echo "You are logged in as a Guest!";
+            echo "You are logged in!";
         }
         else
         {
-            echo "This user doesn't exists!<BR>";
+            echo "This user does not exist!";
         }
     }
 ?>
 
-<font color='red'>NOTE: The users: admin and guest are hardcoded for now [WIP]</font>
-<form method="post" action="<?php echo BASE_URL.'generals/login'; ?>">
-        Username: <input type="text" name="username" required><br>
-        Password: <input type="password" name="password" required><br>
-        <input type="submit" name="submit">
-</form>
+<?php 
+    if ($_SESSION['loggedin'] == false)
+    {
+?>  
+        <form method="post" action="<?php echo BASE_URL.'generals/login'; ?>">
+            Username: <input type="text" name="username" required><br>
+            Password: <input type="password" name="password" required><br>
+            <input type="submit" name="submit">
+        </form>   
+<?php        
+    }
+?>
+
+<?php
+    if ($_SESSION['loggedin'] == true)
+    {
+        echo "<a href='".BASE_URL."generals/logout'>Logout</a>";
+    }
+?>
+
 

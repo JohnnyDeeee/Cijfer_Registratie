@@ -29,15 +29,42 @@ class GeneralsController extends Controller
         
         if (isset($_POST['submit']))
         {
-            if ($_POST['username'] == 'admin' && $_POST['password'] == 'password')
+            $result = $this->model->check_login($_POST['username'], $_POST['password']);
+            
+            if ($result != null)
             {
-                $_SESSION['userrole'] = 'admin';
+                foreach($result as $value)
+                {
+                    $username = $value->username;
+                    $password = $value->password;
+                    $userrole = $value->userrole;
+                }
+            
+                if ($_POST['username'] == $username && $_POST['password'] == $password)
+                {
+                    $_SESSION['userrole'] = $userrole;
+                    $_SESSION['loggedin'] = true;
+                }
+                else
+                {
+                    $_SESSION['loggedin'] = false;
+                }
             }
-            else if ($_POST['username'] == 'guest' && $_POST['password'] == 'password')
+            else
             {
-                $_SESSION['userrole'] = 'guest';
+                $_SESSION['loggedin'] = false;
             }
+
         }
+    }
+    
+    public function logout()
+    {
+        $introtext = "Logout";
+        $this->set('header', $introtext);
+        
+        $_SESSION['loggedin'] = false;
+        $_SESSION['userrole'] = 'guest';
     }
 }
 

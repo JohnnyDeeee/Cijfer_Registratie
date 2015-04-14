@@ -60,14 +60,14 @@ class UsersController extends Controller
             $result = $this->model->select_by_id($id);
             foreach ($result as $value)
             {
-                $firstname = $value->voornaam;
-                $infix = $value->tussenvoegsel;
-                $lastname = $value->achternaam;
+                $username = $value->username;
+                $password = $value->password;
+                $userrole = $value->userrole;
             }
             
-            $this->set('firstname', $firstname);
-            $this->set('infix', $infix);
-            $this->set('lastname', $lastname);
+            $this->set('username', $username);
+            $this->set('password', $password);
+            $this->set('userrole', $userrole);
         }
     }
     
@@ -78,9 +78,9 @@ class UsersController extends Controller
         $table = "<table border=1>";
         $table.= "<tr>
                     <th>ID</th>
-                    <th>Firstname</th>
-                    <th>Infix</th>
-                    <th>Lastname</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Userrole</th>
                 </tr>";
         
         if ($mode == 0)
@@ -89,9 +89,9 @@ class UsersController extends Controller
             {
                 $table .= "<tr>
                 <td>".$value->id."</td>
-                <td>".$value->voornaam."</td>
-                <td>".$value->tussenvoegsel."</td>
-                <td>".$value->achternaam."</td>
+                <td>".$value->username."</td>
+                <td>".$value->password."</td>
+                <td>".$value->userrole."</td>
                 </tr>";
             }
         }
@@ -101,9 +101,9 @@ class UsersController extends Controller
             {
                 $table .= "<tr>
                 <td>".$value->id."</td>
-                <td>".$value->voornaam."</td>
-                <td>".$value->tussenvoegsel."</td>
-                <td>".$value->achternaam."</td>
+                <td>".$value->username."</td>
+                <td>".$value->password."</td>
+                <td>".$value->userrole."</td>
                 <td><a href='".BASE_URL."users/updateuser/".$value->id."'><img src='".BASE_URL."img/update.png' alt='update'></a></td>
                 </tr>";
             }
@@ -114,9 +114,9 @@ class UsersController extends Controller
             {
                 $table .= "<tr>
                 <td>".$value->id."</td>
-                <td>".$value->voornaam."</td>
-                <td>".$value->tussenvoegsel."</td>
-                <td>".$value->achternaam."</td>
+                <td>".$value->username."</td>
+                <td>".$value->password."</td>
+                <td>".$value->userrole."</td>
                 <td><a href='".BASE_URL."users/deleteuser/".$value->id."'><img src='".BASE_URL."img/delete.png' alt='delete'></a></td>
                 </tr>";
             }

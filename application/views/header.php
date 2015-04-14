@@ -1,1 +1,3 @@
-<h3>Dit is de header</h3>
+<div style="background:red; width:25%; height:3%;">
+    <p align='center'>Dit is de header</p>
+</div>
