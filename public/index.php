@@ -20,10 +20,12 @@ else
 if (session_status() == PHP_SESSION_NONE)
 {
     session_start();
-    //$_SESSION['userrole'] = 'guest'; //set userrole as guest standard
-    //$_SESSION['loggedin'] = false; //set logged in false standard
 }   
-
+if (!isset($_SESSION['userrole']))
+{
+    $_SESSION['userrole'] = 'guest'; //set userrole as guest standard
+    $_SESSION['loggedin'] = false; //set logged in false standard
+}
 
 //DEBUG
 echo "<font color='green'>";

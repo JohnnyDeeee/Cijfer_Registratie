@@ -10,7 +10,7 @@
     
 <h3>Guest actions</h3>
 <a href='generals/login'>Inloggen</a>
-[Registratie link]
+<a href='generals/register'>Register</a>
 
 <BR><BR>
     

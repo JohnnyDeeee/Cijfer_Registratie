@@ -31,6 +31,8 @@
     if ($_SESSION['loggedin'] == true)
     {
         echo "<a href='".BASE_URL."generals/logout'>Logout</a>";
+        echo "<BR>";
+        echo "<a href='".BASE_URL."'>Home</a>";
     }
 ?>
 

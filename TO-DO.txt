@@ -2,17 +2,23 @@ Openhuis registratie formulier
 -----------------------------
 
 TO-DO:
--   Formulier maken
-    -   Woonplaats wordt automatisch ingevuld als postcode en huisnummer zijn ingevoerd
 -   Inlog systeem
-    -   aanpassen aan md5 voor passwoord
--   Register systeem
-    -   pagina maken
     -   aanpassen aan md5 voor passwoord
 -   Create user pagina aanpassen
     -   Password masked en md5 hash
     -   Userrole drop down menu met userroles
 -   Update user pagina aanpassen
     -   User info automatisch ingevuld (of lege velden niet updaten)
+-   Register systeem
+    -   pagina maken
+    -   aanpassen aan md5 voor passwoord
     
 DOING:
+-   Formulier maken
+    -   Woonplaats en straat moeten automatisch worden ingevuld via postcode value
+    -   Limit datalist tot 8 opties
+    -   Sla alles op in database
+    
+
+
+NOTES: Formulier high priority, moet in de week van 27 april af zijn..
