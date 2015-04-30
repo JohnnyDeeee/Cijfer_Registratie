@@ -71,7 +71,7 @@ class GeneralsController extends Controller
     }
     
     public function formulier_save(){
-        $introtext = "Save results";
+        $introtext = "Your results have been saved!";
         $this->set('header', $introtext);
         
         echo var_dump($_POST);
